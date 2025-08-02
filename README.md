@@ -1,0 +1,1 @@
+KartavyaFEED is a SaaS platform that empowers students to stay informed and enhance their preparation through curated news and category-specific insights — helping them navigate current affairs with confidence and clarity
