@@ -1,21 +1,21 @@
-/*--------------------------------- GLOBAL --------------------------------- */
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Permanent+Marker&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-  
-  :root {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Permanent Marker", cursive;
-    border: 0.2px solid grey;
+@import "tailwindcss";
 
-    color-scheme: light dark;
-    color: black;
-    background-color: #242424;
+* {   /* debug */
+  /* border: 0.2px solid grey; */
+}     
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@theme {
+  --font-marker: 'Permanent Marker', 'cursive';
+  --font-gummy: 'Sour Gummy', 'sans-serif';
+  --font-outfit: 'Outfit', 'sans-serif'
 }
 
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* color-scheme: light dark;
+  background-color: #242424; */
+}
