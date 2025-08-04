@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Permanent+Marker&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&family=Permanent+Marker&family=Playpen+Sans+Deva:wght@100..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 * {   /* debug */
@@ -8,7 +8,9 @@
 @theme {
   --font-marker: 'Permanent Marker', 'cursive';
   --font-gummy: 'Sour Gummy', 'sans-serif';
-  --font-outfit: 'Outfit', 'sans-serif'
+  --font-outfit: 'Outfit', 'sans-serif';
+  --font-caudex: 'Caudex', 'serif';
+  --font-playpen: 'Playpen Sans Deva', 'cursive'
 }
 
 :root {
@@ -19,3 +21,4 @@
   /* color-scheme: light dark;
   background-color: #242424; */
 }
+

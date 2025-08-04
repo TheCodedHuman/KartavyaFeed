@@ -7,7 +7,7 @@ function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     
     // only forSake of fixing mess
-    const baseLoginClass = `text-white px-4 py-2 rounded hover:bg-[#9A2A4D] font-semibold transition duration-300 ease-in-out font-gummy text-md focus:outline-none focus:ring`;
+    const baseLoginClass = `text-white px-4 py-2 rounded hover:bg-[#9A2A4D] font-semibold transition duration-300 ease-in-out font-gummy text-md focus:outline-none focus:ring cursor-pointer`;
     const loginClassForHeader = `hidden md:inline-block bg-[#E71349] ${baseLoginClass}`;
     const loginClassForDrawer = `outline-none w-full md:hidden bg-[#7E1F37] ${baseLoginClass}`;
     
