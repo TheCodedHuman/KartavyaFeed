@@ -1,7 +1,7 @@
 import React from 'react'
-import PricingHeader from '../components/PricingHeader.jsx'
-import PricingHero from '../components/PricingHero.jsx'
-import PricingFooter from '../components/PricingFooter.jsx'
+import PricingHeader from '../components/views/pricingViews/PricingHeader.jsx'
+import PricingHero from '../components/views/pricingViews/PricingHero.jsx'
+import PricingFooter from '../components/views/pricingViews//PricingFooter.jsx'
 
 function Pricing() {
   return (

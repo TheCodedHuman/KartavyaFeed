@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 * {   /* debug */
-  /* border: 0.2px solid grey; */
+  /* border: 0.2px solid red; */
 }     
 
 @theme {

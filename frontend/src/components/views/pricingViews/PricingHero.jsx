@@ -1,5 +1,5 @@
 import React from 'react'
-import PricingFragment from './fragments/PricingFragment.jsx'
+import PricingFragment from '../../fragments/PricingFragment.jsx'
 
 function PricingHero() {
   return (

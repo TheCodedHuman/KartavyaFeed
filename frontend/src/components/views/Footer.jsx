@@ -1,5 +1,6 @@
 import React from 'react'
-import FooterFragment from './fragments/FooterFragment.jsx'
+import FooterFragment from '../fragments/FooterFragment.jsx'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -40,8 +41,13 @@ function Footer() {
 
             </section>
 
-            <section className='bg-gradient-to-r from-[#CC1543] via-[#c53563] to-[#CC1543] backdrop-blur bg-opacity-60 rounded-t-md shadow-md'>
-                <h5 className='text-[0.75rem] text-center lg:text-lg text-white pt-3 pb-3 tracking-wide font-outfit'>
+            <section className='bg-gradient-to-r from-[#CC1543] via-[#c53563] to-[#CC1543] backdrop-blur bg-opacity-60 rounded-t-md shadow-md flex flex-col-reverse md:flex-row px-8 py-4 justify-between '>
+                <span>
+                    <Link to="/privacy-policy" aria-label='privacy policy' className='text-[0.75rem] lg:text-lg hover:text-[#fff566] transition-colors duration-300'>Privacy Policy</Link>
+                    <span className='text-xl font-thin'>&nbsp; | &nbsp;</span>
+                    <Link to="/terms-and-conditions" aria-label='terms and conditions' className='text-[0.75rem] lg:text-lg hover:text-[#fff566] transition-colors duration-300'>Terms of use</Link>
+                </span>
+                <h5 className='text-[0.75rem] lg:text-lg text-white tracking-wide font-outfit hover:text-[#fff566] transition-colors duration-300'>
                     <span className='block md:inline'>Copyright &nbsp;©&nbsp; {new Date().getFullYear()} &nbsp;~&nbsp; All Rights Reserved &nbsp;|&nbsp;</span> 
                     <span className='block md:inline'>KartavyaFEED &nbsp;|&nbsp; TheCodedHuman</span>
                 </h5>

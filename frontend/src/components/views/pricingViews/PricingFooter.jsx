@@ -1,5 +1,5 @@
 import React from 'react'
-import TestimonialFragment from './fragments/TestimonialFragment.jsx'
+import TestimonialFragment from '../../fragments/TestimonialFragment.jsx'
 
 function PricingFooter() {
 
