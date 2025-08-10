@@ -13,8 +13,9 @@ function NavBar() {
     
     
     const navLinks = [
+        { path: '/', label: 'Home' },                   // users may not tap on logo on mobile screns to go at home page
         { path: '/latest', label: 'Current Affairs' },
-        { path: '/category', label: 'General Studies' },
+        { path: '/workspace', label: 'AI Workspace' },
         { path: '/pricing', label: 'Pricing' },
         { path: '/about', label: 'About' }
     ]
@@ -58,20 +59,21 @@ function NavBar() {
 
 
             {/* BackDrop Blur */}
-            {isOpen && (
-                <div onClick={() => setIsOpen(false)}
-                className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 transition-opacity duration-300"
-                aria-hidden="true"
+            { isOpen && (
+                <div
+                    onClick={() => setIsOpen(false)}
+                    className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
+                    aria-hidden="true"
                 />
             )}
 
             {/* Navigation Drawer */}
-            <div className={`md:hidden bg-[#CC1543] text-white transition-transform duration-500 ease-in-out z-40 ${isOpen ? 'translate-y-0' : '-translate-y-full'} absolute top-[4rem] left-0 w-full rounded-b-xl pt-2`}>
+            <div className={`md:hidden bg-[#CC1543] text-white transition-transform duration-500 ease-in-out z-40 ${isOpen ? 'translate-y-0' : '-translate-y-full'} fixed top-[4rem] left-0 w-full rounded-b-xl pt-2 overflow-y-auto max-h-[80vh]`}>
                 {/* Nav Links Row */}
-                <ul className='flex justify-around items-center py-4 font-outfit list-disc'>
+                <ul className='flex flex-col justify-around items-center pt-4 font-outfit gap-2'>
                     {navLinks.map(({ path, label }) => (
                         <li key={path}>
-                            <Link to={path} onClick={() => setIsOpen(false)} className="block text-sm hover:text-yellow-300 transition-colors duration-300 relative right-1.5">
+                            <Link to={path} onClick={() => setIsOpen(false)} className="block active:text-yellow-300 active:bg-red-500 transition-colors duration-300 relative text-xl rounded-md px-26 py-2">
                                 {label}
                             </Link>
                         </li>
@@ -79,9 +81,9 @@ function NavBar() {
                 </ul>
 
                 {/* Button Below */}
-                <div className="flex justify-center pb-4">
+                <div className="flex justify-center py-6">
                     <Link to='/login' className='w-[80%]'>
-                        <button type='button' className={loginClassForDrawer} aria-label="Login to KartavyaFEED" aria-expanded={isOpen}>
+                        <button onClick={() => setIsOpen(false)}  type='button' className={loginClassForDrawer} aria-label="Login to KartavyaFEED" aria-expanded={isOpen}>
                             SignUp / Login
                         </button>
                     </Link>

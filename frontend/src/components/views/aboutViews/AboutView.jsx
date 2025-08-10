@@ -1,28 +1,52 @@
-import React from 'react'
-
-function AboutView({ title, imgUrl, subTitle, content, isOdd }) {
-
+function AboutView({ title, imgUrl, subTitle, content, quote, isOdd }) {
     return (
-        <section className='bg-[#fff0c0] py-4' >
-            <h1 className='font-caudex text-3xl lg:text-6xl font-bold italic text-center py-8'>{title}</h1>
+        <section className="py-8">
 
-            <div className={`px-6 md:px-16 lg:px-48 py-16 flex flex-col ${isOdd ? 'flex-row-reverse' : 'flex-row'} items-center justify-center gap-16`}>
-                <img src={imgUrl} alt="hurryStudent" className={`sm:w-[80%] lg:h-84 lg:w-84 aspect-square ${isOdd ? 'rotate-2' : '-rotate-2'} rounded-2xl ring-4 ring-blue-800 transition-all hover:scale-105 hover:drop-shadow-2xl hover:duration-300 ease-out`} />
+            {/* Complementary Title Heading */}
+            {title && (
+                <header className="text-center py-8">
+                    <h1 className="font-caudex text-3xl lg:text-5xl font-bold italic">{title}</h1>
+                </header>
+            )}
 
-                <div className='flex justify-between flex-col gap-6 items-center text-[1rem] lg:text-xl'>
+            {/* Supplemantary Addons */}
+            <article  className={`max-w-screen-xl px-6 md:px-16 lg:px-24 py-16 flex flex-col ${isOdd ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-center gap-16 mx-auto`}>
 
-                    <p className="list-disc  font-outfit font-semibold">{subTitle}</p>
-                    <ul className = "list-disc space-y-3 font-outfit font-semibold w-[90%]" >
-                        {content.map((content, index) => (
-                            <li key={index}>{content}</li>
-                        ))}
-                    </ul >
-                    
+                {/* image */}
+                {imgUrl && (
+                    <img
+                        src={imgUrl}
+                        alt="Illustration"
+                        className={`w-[80%] sm:w-[60%] lg:w-[22rem] aspect-square ${isOdd ? 'rotate-2' : '-rotate-2'
+                            } rounded-2xl ring-4 ring-blue-800 transition-transform duration-300 ease-out hover:scale-105 hover:drop-shadow-2xl`} />
+                )}
+
+                {/* sub-title */}
+                <div className="flex flex-col gap-6 items-center text-base lg:text-xl w-full lg:w-[60%]">
+                    {subTitle && <p className="font-outfit font-semibold text-center">{subTitle}</p>}
+
+                    {/* information lists */}
+                    {content && Array.isArray(content) && (
+                        <ul className="list-disc space-y-3 font-outfit font-semibold w-[90%]">
+                            {content.map((point, index) => (
+                                <li key={index}>{point}</li>
+                            ))}
+                        </ul>
+                    )}
+
+                    {/* quote */}
+                    {quote && (
+                        <blockquote className="italic font-caudex text-center text-lg lg:text-2xl text-blue-900">
+                            “{quote}”
+                        </blockquote>
+                    )}
+
                 </div>
-            </div>
-
+            </article>
         </section>
-    )
+    );
 }
 
 export default AboutView
+
+

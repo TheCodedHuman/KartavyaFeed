@@ -2,7 +2,7 @@ import React from 'react'
 
 function TestimonialFragment({ imgUrl, userName, comment }) {
   return (
-      <div className='bg-[#7DD4FF] p-4 w-full rounded-xl shadow-md hover:scale-105 hover:duration-300 ease-in-out transition-transform'>
+      <div className='bg-[#7DD4FF] p-4 w-full rounded-xl shadow-md hover:scale-105 hover:duration-300 ease-in-out transition-transform drop-shadow-2xl'>
         
         <div className='flex justify-between items-center mb-2 p-2'>
             <img src={imgUrl} alt="userImg" className='w-16 h-16 rounded-full' />

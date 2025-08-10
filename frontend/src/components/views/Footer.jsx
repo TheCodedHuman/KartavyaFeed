@@ -47,7 +47,7 @@ function Footer() {
                     <span className='text-xl font-thin'>&nbsp; | &nbsp;</span>
                     <Link to="/terms-and-conditions" aria-label='terms and conditions' className='text-[0.75rem] lg:text-lg hover:text-[#fff566] transition-colors duration-300'>Terms of use</Link>
                 </span>
-                <h5 className='text-[0.75rem] lg:text-lg text-white tracking-wide font-outfit hover:text-[#fff566] transition-colors duration-300'>
+                <h5 className='text-[0.75rem] lg:text-lg text-white tracking-wide font-outfit'>
                     <span className='block md:inline'>Copyright &nbsp;©&nbsp; {new Date().getFullYear()} &nbsp;~&nbsp; All Rights Reserved &nbsp;|&nbsp;</span> 
                     <span className='block md:inline'>KartavyaFEED &nbsp;|&nbsp; TheCodedHuman</span>
                 </h5>

@@ -4,7 +4,7 @@ import NavBar from './components/views/NavBar.jsx'
 import Footer from './components/views/Footer.jsx'
 import Home from './pages/Home.jsx'
 import CA from './pages/CA.jsx'
-import GS from './pages/GS.jsx'
+import Workspace from './pages/Workspace.jsx'
 import Pricing from './pages/Pricing.jsx'
 import About from './pages/About.jsx'
 import Login from './pages/Login.jsx'
@@ -19,7 +19,7 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/category' element={<GS />} />
+            <Route path='/workspace' element={<Workspace />} />
             <Route path='/latest' element={<CA />} />
             <Route path='/pricing' element={<Pricing />} />
             <Route path='/about' element={<About />} />

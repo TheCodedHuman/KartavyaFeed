@@ -23,7 +23,7 @@ function PricingFooter() {
                 
                 <div className='px-6 md:px-16 lg:px-48 pt-16 flex flex-col lg:flex-row items-center justify-center gap-16'>
 
-                    <img src="hurry.jpeg" alt="hurryStudent" className='sm:w-[80%] lg:h-108 lg:w-108 aspect-square -rotate-3 rounded-2xl ring-4 ring-blue-800 transition-transform hover:rotate-0' />
+                    <img src="hurry.jpeg" alt="hurryStudent" className='sm:w-[80%] lg:h-108 lg:w-108 aspect-square -rotate-3 rounded-2xl ring-4 ring-blue-800 transition-transform hover:rotate-0 active:rotate-0' />
                     <div className='flex justify-between flex-col gap-6 items-center text-[1rem] lg:text-xl'>
                         <p className="list-disc  font-outfit font-semibold">KartavyaFEED Freemium is a specially crafted plan for college students who aspire to lead, learn, and make a difference.</p>
                         <ul className="list-disc space-y-3 font-outfit font-semibold w-[90%] lg">
