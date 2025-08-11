@@ -2,6 +2,9 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
+  "description": "KartavyaFEED — a civic-focused news platform powered by React, Vite, and Tailwind CSS",
+  "homepage": "https://kartavyafeed.vercel.app",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -31,3 +34,4 @@
     "vite": "^7.0.4"
   }
 }
+

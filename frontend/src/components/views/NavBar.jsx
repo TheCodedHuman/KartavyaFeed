@@ -33,13 +33,15 @@ function NavBar() {
 
                     {/* Nav-Links */}
                     <ul className='hidden md:flex justify-between items-center gap-x-8 font-outfit font-semibold'>
-                        {navLinks.map(({ path, label }) => (
-                            <li key={path}>
-                                <Link to={path} aria-label={`Go to ${label}`} className='lg:text-xl md:text-sm hover:text-yellow-300 transition-colors duration-300'>
-                                    {label}
-                                </Link>
-                            </li>
-                        ))}
+                        {navLinks
+                            .filter(link => link.label !== 'Home')
+                            .map(({ path, label }) => (
+                                <li key={path}>
+                                    <Link to={path} aria-label={`Go to ${label}`} className='lg:text-xl md:text-sm hover:text-yellow-300 transition-colors duration-300'>
+                                        {label}
+                                    </Link>
+                                </li>
+                            ))}
                     </ul>
 
                 </nav>

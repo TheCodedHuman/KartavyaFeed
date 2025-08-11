@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { StepBack, StepForward } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 function Carousel() {
 
     // Literals
     const [currentIndex, setCurrentIndex] = useState(0)
     const images = [
-        'homebanner_1.jpg',
-        'homebanner_2.jpg',
-        'homebanner_3.jpg',
-        'homebanner_4.jpg',
-        'homebanner_5.jpg'
+        'home_slide_1.jpg',
+        'home_slide_2.jpg',
+        'home_slide_3.jpg',
+        'home_slide_4.jpg',
+        'home_slide_5.jpg'
     ]
 
 
@@ -41,9 +41,9 @@ function Carousel() {
             </div>
 
             {/* Navigation buttons ~ Stays fixed */}
-            <aside className='absolute flex justify-between items-center w-full px-8 top-1/2 -translate-y-1/2 z-2'>
-                <span><StepBack size={32} onClick={goPrevious} className='bg-white rounded-md drop-shadow-2xl cursor-pointer' /></span>
-                <span><StepForward size={32} onClick={goNext} className='bg-white rounded-md drop-shadow-2xl cursor-pointer' /></span>
+            <aside className='absolute flex justify-between items-center w-full px-5 top-1/2 -translate-y-1/2 z-2'>
+                <span><ChevronLeft size={64} onClick={goPrevious} className='text-white rounded-md drop-shadow-2xl cursor-pointer active:scale-75' /></span>
+                <span><ChevronRight size={64} onClick={goNext} className='text-white rounded-md drop-shadow-2xl cursor-pointer active:scale-75' /></span>
             </aside>
 
             {/* Navigation Ellipses ~ Shows current slide */}
