@@ -1,25 +1,50 @@
+import Flag from 'react-world-flags'
+import countryCodes from '../../../assets/countryCodes.js';
+
 function NewsCard({ data }) {
 
-  const { title, image_url, description, source_url } = data
+  // api response optimization
+  const { title, image_url, description, source_url, country, source_name, pubDate } = data;
   const shortTitle = title?.slice(0, 50) + '...';
-  const shortDescription = description?.slice(0, 70) + '...';
-  const fallbackBackgroundImage = '/logo.png'
+  const shortDescription = description?.slice(0, 90) + '...';
+  const fallbackBackgroundImage = '/logo.png';
+  const formattedDate = new Date(pubDate).toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  })
+
+
+  // flag side logo literals
+  const countryCode = countryCodes[country] || 'un';
 
   return (
     <a
       href={source_url || '#'}
       target='_blank'
+      title='Open link in new tab ?'
       rel="noopener noreferrer"
-      className='rounded-md w-[90%] h-fit md:1h-96 md:w-64 bg-white text-black p-2 shadow-lg flex items-center md:flex-col flex-row gap-6'>
+      className='relative ounded-md w-[90%] h-fit md:h-108 md:w-76 bg-white text-black p-2 shadow-lg flex items-center md:flex-col flex-row gap-6 overflow-ellipsis pb-8 hover:drop-shadow-xl hover:scale-103 transition-transform duration-300 ease-out'>
 
-      <div className='w-[35%] h-[120px] md:w-full md:h-[50%] mb-2 md:mr-2 aspect-[4/3]'>
+      {/* Image/Logo */}
+      <div className='relative w-[35%] h-[120px] md:w-full md:h-[50%] mb-2 md:mr-2 aspect-[4/3]'>
         <img src={image_url || fallbackBackgroundImage} alt="NewsImage" className={`w-full h-full aspect-square ${image_url ? 'object-cover' : 'object-contain'} rounded-md`} />
+
+        <span className='absolute bottom-2 right-2'>
+          {countryCode !== 'un' && <Flag code={countryCode} style={{ width: '32px', height: '28px' }} />}
+        </span>
       </div>
 
+
+      {/* Title and Description */}
       <div>
-        <h3 title={title} className='sm:text-md md:text-xl lg:text-2xl font-semibold text-md font-caudex'>{shortTitle}</h3>
-        <p title={description} className='text-sm md:text-md lg:text-xl font-outfit text-medium opacity-90'>{shortDescription}</p>
+        <h3 title={title} className='sm:text-md md:text-xl lg:text-xl font-semibold text-md font-outfit mb-3'>{shortTitle}</h3>
+        <p title={description} className='text-sm md:text-md lg:text-base font-outfit text-medium opacity-80'>{shortDescription}</p>
       </div>
+
+      {/* Publish Date and Source Name */}
+      <p title={`Source: ${source_name}`} className='absolute bottom-2 right-2 text-[0.75rem] opacity-80 font-outfit'><strong>{source_name}</strong></p>        {/* just for SEO */}
+      <p title={`News Dated: ${pubDate}`} className='absolute bottom-2 left-2 text-[0.75rem] opacity-80 font-outfit'><strong>{formattedDate}</strong></p>        {/* just for SEO */}
 
     </a>
   )
