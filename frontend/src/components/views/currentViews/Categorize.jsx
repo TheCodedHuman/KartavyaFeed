@@ -62,7 +62,7 @@ function Categorize({ setNewsData, setLoading }) {
                     setQuery('')
                     fetchNews()
             }}>
-                <RefreshCcw />
+                <RefreshCcw size={36} />
             </button>
 
             <select

@@ -11,7 +11,7 @@ function Footer() {
                 <FooterFragment 
                     title="Author"
                     fragmentArray={[
-                        { label: "TheCodedHuman" },
+                        { label: "TheCodedHuman", url: "https://github.com/TheCodedHuman" },
                         { label: "Moksh Mahawar" }
                     ]}/>
 
@@ -25,9 +25,10 @@ function Footer() {
                     ]}/>
 
                 <FooterFragment 
-                    title="API Used"
+                    title="Resources Used"
                     fragmentArray={[
-                        { label: "Newsdata.io" },
+                        { label: "Newsdata API", url: "https://newsdata.io/" },
+                        { label: "Flaticon Icons", url: "https://www.flaticon.com/" },
                         { label: "My API", info: " (will be used soon...)" }
                     ]}/>
 
@@ -58,4 +59,5 @@ function Footer() {
 }
 
 export default Footer
+
 

@@ -5,7 +5,7 @@ import Insights from '../components/views/homeViews/Insights.jsx'
 
 function Home() {
   return (
-    <div>
+    <div className='bg-gradient-to-br from-[#fff4a1] to-[#c5fffa]'>
       <Carousel />
       <PromoBanner />
       <Insights />
