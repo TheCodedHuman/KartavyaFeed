@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react';
 
-function NavBar() {
+function NavBar({ onLoginClick }) {
     
     const [isOpen, setIsOpen] = useState(false);
     
@@ -49,12 +49,20 @@ function NavBar() {
 
                 {/* Login Button & Menu */}
                 <div className="flex items-center gap-x-4">
-                    <Link to='/login'>
-                        <button type='button' className={loginClassForHeader} aria-label="Login to KartavyaFEED" aria-expanded={isOpen}>SignUp / Login</button>
-                    </Link>
 
-                    <button onClick={() => setIsOpen(!isOpen)} className='md:hidden text-white p-2 transition-opacity opacity-75 ease-in-out hover:opacity-100 duration-700 ' aria-label='Toggle menu'>
-                        {isOpen ? <X size='28' /> : <Menu size='28' />}
+                    <button 
+                        type='button' 
+                        onClick={onLoginClick}
+                        className={loginClassForHeader} 
+                        aria-label="Login to KartavyaFEED">
+                            SignUp / Login
+                    </button>
+
+
+                    <button 
+                        onClick={() => setIsOpen(!isOpen)} 
+                        className='md:hidden text-white p-2 transition-opacity opacity-75 ease-in-out hover:opacity-100 duration-700 ' aria-label='Toggle menu'>
+                            {isOpen ? <X size='28' /> : <Menu size='28' />}
                     </button>
                 </div>
             </header>
@@ -71,7 +79,7 @@ function NavBar() {
 
             {/* Navigation Drawer */}
             <div className={`md:hidden bg-[#CC1543] text-white transition-transform duration-500 ease-in-out z-40 ${isOpen ? 'translate-y-0' : '-translate-y-full'} fixed top-[4rem] left-0 w-full rounded-b-xl pt-2 overflow-y-auto max-h-[80vh]`}>
-                {/* Nav Links Row */}
+                {/* Nav Links in column structure */}
                 <ul className='flex flex-col justify-around items-center pt-4 font-outfit gap-2'>
                     {navLinks.map(({ path, label }) => (
                         <li key={path}>
@@ -83,12 +91,20 @@ function NavBar() {
                 </ul>
 
                 {/* Button Below */}
-                <div className="flex justify-center py-6">
-                    <Link to='/login' className='w-[80%]'>
-                        <button onClick={() => setIsOpen(false)}  type='button' className={loginClassForDrawer} aria-label="Login to KartavyaFEED" aria-expanded={isOpen}>
+                <div className="flex justify-center py-6 w-[80%] m-auto">
+
+                    <button 
+                        onClick={
+                            () => {
+                                setIsOpen(false)                // closes navigation drawer
+                                onLoginClick()
+                            }}  
+                        type='button' 
+                        className={loginClassForDrawer} 
+                        aria-label="Login to KartavyaFEED" >
                             SignUp / Login
-                        </button>
-                    </Link>
+                    </button>
+
                 </div>
             </div>
 

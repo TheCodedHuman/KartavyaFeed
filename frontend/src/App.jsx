@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/views/NavBar.jsx'
 import Footer from './components/views/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -10,11 +10,23 @@ import About from './pages/About.jsx'
 import Login from './pages/Login.jsx'
 import TNC from './pages/TNC.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import LoginView from './components/views/LoginView.jsx'
 
 function App() {
+
+  // Modal State
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  // Handlers
+  const openLoginModal = () => setIsLoginOpen(true)
+  const closeLoginModal = () => setIsLoginOpen(false)
+
   return (
     <div>
-      <NavBar />
+      <NavBar onLoginClick={openLoginModal} />
+
+      {/* Login Modal */}
+      <LoginView isOpen={isLoginOpen} onClose={closeLoginModal} />
 
         <main>
           <Routes>

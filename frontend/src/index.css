@@ -10,15 +10,12 @@
   --font-gummy: 'Sour Gummy', 'sans-serif';
   --font-outfit: 'Outfit', 'sans-serif';
   --font-caudex: 'Caudex', 'serif';
-  --font-playpen: 'Playpen Sans Deva', 'cursive'
+  --font-playpen: 'Playpen Sans Deva', 'cursive';
 }
 
 :root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  /* color-scheme: light dark;
-  background-color: #242424; */
 }
 
