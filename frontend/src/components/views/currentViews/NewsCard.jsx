@@ -1,5 +1,7 @@
 import Flag from 'react-world-flags'
 import countryCodes from '../../../assets/countryCodes.js';
+import { toCapitalized } from "../../../assets/Utils/stringUtils.js";
+
 
 function NewsCard({ data }) {
 
@@ -17,6 +19,7 @@ function NewsCard({ data }) {
 
   // flag side logo literals
   const countryCode = countryCodes[country] || 'un';
+  const countryNameCapitalized = toCapitalized(country?.[0] || 'Unknown Country'); 
 
   return (
     <a
@@ -30,8 +33,8 @@ function NewsCard({ data }) {
       <div className='relative w-[35%] h-[120px] md:w-full md:h-[50%] mb-2 md:mr-2 aspect-[4/3]'>
         <img src={image_url || fallbackBackgroundImage} alt="NewsImage" className={`w-full h-full aspect-square ${image_url ? 'object-cover' : 'object-contain'} rounded-md`} />
 
-        <span className='absolute bottom-2 right-2'>
-          {countryCode !== 'un' && <Flag code={countryCode} style={{ width: '32px', height: '28px' }} />}
+        <span title={countryNameCapitalized} className='absolute bottom-2 right-2'>
+          {countryCode && countryCode !== 'un' && <Flag code={countryCode} style={{ width: '32px', height: '28px' }} />}
         </span>
       </div>
 

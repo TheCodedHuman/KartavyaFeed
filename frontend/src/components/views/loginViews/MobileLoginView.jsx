@@ -2,7 +2,7 @@
 
 import TermsNotice from '../../fragments/TermsNotice.jsx'
 
-function MobileLoginView({ setMobileLogin }) {
+function MobileLoginView({ setMobileLogin, onClose }) {
 
     // Defined
     function inputFilter(e) {
@@ -40,13 +40,13 @@ function MobileLoginView({ setMobileLogin }) {
             {/* Mobile Input */}
             <form className=" w-fit text-base md:text-[1.35rem] font-outfit" onSubmit={handleSubmit} type='submit'>
                 <label htmlFor="mobile" className="sr-only">Mobile Number</label>
-                <div className="flex bg-white/70">
+                <div className="flex">
 
-                    <span className="border p-4 rounded-lg rounded-tr-none rounded-br-none">+91</span>
+                    <span className="border p-4 rounded-lg rounded-tr-none rounded-br-none bg-white/70">+91</span>
 
                     <input
                         required
-                        className="border border-l-0 p-4 rounded-lg outline-none rounded-tl-none rounded-bl-none"
+                        className="border border-l-0 p-4 rounded-lg outline-none rounded-tl-none rounded-bl-none bg-white/70"
                         id="mobile"
                         name="mobile"
                         type="tel"
@@ -69,7 +69,7 @@ function MobileLoginView({ setMobileLogin }) {
                 </button>
 
                 {/* Terms and condition lower line */}
-                <TermsNotice />
+                <TermsNotice onClose={onClose} />
 
             </section>
 

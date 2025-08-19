@@ -54,17 +54,20 @@ function Categorize({ setNewsData, setLoading }) {
     return (
         <div className='flex flex-col md:flex-row justify-center items-center gap-x-8 gap-y-4 bg-gradient-to-r from-[#fe9901] via-[#ffbe5c] to-[#fe9901] py-6 rounded-b-2xl md:px-4 relative pt-5'>
 
+            {/* Refresh button ~ on 'md' and 'lg' screens */}
             <button 
-                className='font-extrabold px-6 py-4 md:p-4 text-gray-600 hover:text-black rounded-full bg-[#ffe602] hover:bg-[#ffd102] hover:drop-shadow-2xl hover:scale-105 transition duration-200 ease-out md:block hidden'                
+                className='font-extrabold p-4 text-gray-600 hover:text-black rounded-full bg-[#ffe602] hover:bg-[#ffd102] hover:drop-shadow-2xl hover:scale-105 transition duration-200 ease-out md:block hidden'                
                 onClick={() => {
                     setCategory('social')
                     setNation('Select All')
                     setQuery('')
                     fetchNews()
-            }}>
-                <RefreshCcw size={36} />
+                }}>
+                <RefreshCcw size={32} />
             </button>
 
+
+            {/* Category selection dropdown */}
             <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
@@ -73,16 +76,15 @@ function Categorize({ setNewsData, setLoading }) {
                 {
                     newsCategory.sort().map((newsType, index) => (
                         <option key={index} value={newsType}>
-                            {toCapitalized(newsType
-                                .split(' ')
-                                .join(' '))
-                            }                               {/* captitalizing each word */}
+                            {toCapitalized(newsType)}                       {/* captitalizing each word */}
                         </option>
                     ))
                 }
                 <option value="other">Other</option>
             </select>
 
+
+            {/* Country selection dropdown */}
             <select
                 value={nation}
                 onChange={(e) => setNation(e.target.value)}
@@ -91,38 +93,41 @@ function Categorize({ setNewsData, setLoading }) {
                 {
                     Object.keys(countryCodes).sort().map((countryName) => (
                         <option key={countryName} value={countryName}>
-                            {countryName
-                                .split(' ')
-                                .map(toCapitalized)
-                                .join(' ')
-                            }
+                            {toCapitalized(countryName)}
                         </option>
                     ))
                 }
             </select>
-            {/*  */}
 
-            <div className='flex gap-4 w-[80%] md:w-[30%]'>
 
+            {/* Lower filter section in 'sm' screens */}
+            <div className='flex items-center justify-center gap-4 w-[80%] md:w-[30%]'>
+
+                {/* Refresh button ~ only on 'sm' screens */}
                 <button
-                    className='font-extrabold px-6 py-4 md:p-4 text-gray-600 hover:text-black rounded-full bg-[#ffe602] hover:bg-[#ffd102] hover:drop-shadow-2xl hover:scale-105 transition duration-200 ease-out block md:hidden'
+                    className='font-extrabold p-4 text-gray-600 hover:text-black rounded-full bg-[#ffe602] hover:bg-[#ffd102] hover:drop-shadow-2xl hover:scale-105 transition duration-200 ease-out block md:hidden'
                     onClick={() => {
                         setCategory('social')
                         setNation('Select All')
                         setQuery('')
                         fetchNews()
                     }}>
-                    <RefreshCcw />
+                    <RefreshCcw size={32} />
                 </button>
 
+                {/* Search Input */}
                 <input type="text"
                     placeholder='Search News...'
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={(e) => { if (e.key === 'Enter') fetchNews() }}
-                    className="border px-4 rounded-xl text-xl w-full font-outfit" />
+                    className="font-outfit border rounded-xl text-xl w-full px-4 py-[1.40rem]" />
 
-                <button title='Search OR Refresh' onClick={fetchNews} className='font-extrabold p-4 text-gray-600 hover:text-black rounded-full bg-[#ffe602] hover:bg-[#ffd102] hover:drop-shadow-2xl hover:scale-105 transition duration-200 ease-out'><Search size={36} /></button>
+                {/* */}
+
+
+                {/* Search Button */}
+                <button title='Search OR Refresh' onClick={fetchNews} className='font-extrabold p-4 rounded-full text-gray-600 hover:text-black bg-[#ffe602] hover:bg-[#ffd102] hover:drop-shadow-2xl hover:scale-105 transition duration-200 ease-out'><Search size={32} /></button>
             </div>
 
         </div>
@@ -139,5 +144,4 @@ export default Categorize
 //     queryParts.push(`${query.trim().slice(0, 81)}`)
 //     params.q = queryParts.join(' AND ')
 // } it creates more problem in edge cases >:-)
-
 

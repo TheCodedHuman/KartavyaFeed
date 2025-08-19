@@ -2,7 +2,7 @@
 
 import TermsNotice from '../../fragments/TermsNotice.jsx'
 
-function AccountLoginView({ setMobileLogin }) {
+function AccountLoginView({ setMobileLogin, onClose }) {
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -63,12 +63,12 @@ function AccountLoginView({ setMobileLogin }) {
 
                 <button
                     onClick={() => setMobileLogin(true)}
-                    className='text-center bg-amber-400 px-4 py-2 text-sm opacity-60 hover:opacity-100 active:opacity-100 duration-250 ease-in-out rounded-md font-outfit'>
+                    className='text-center bg-amber-400 px-4 py-2 text-sm opacity-60 hover:opacity-100 active:opacity-100 duration-250 ease-in-out rounded-md font-outfit mt-5'>
                     Login via Mobile Number
                 </button>
 
                 {/* Terms and condition lower line */}
-                <TermsNotice />
+                <TermsNotice onClose={onClose} />
 
             </section>
         </div>

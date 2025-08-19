@@ -37,8 +37,8 @@ function LoginModal({ isOpen, onClose }) {
 
                 {/* The Inner Content */}
                 {mobileLogin
-                    ? <MobileLoginView setMobileLogin={setMobileLogin} />
-                    : <AccountLoginView setMobileLogin={setMobileLogin} />
+                    ? <MobileLoginView setMobileLogin={setMobileLogin} onClose={onClose} />
+                    : <AccountLoginView setMobileLogin={setMobileLogin} onClose={onClose} />
                 }
 
             </div>
