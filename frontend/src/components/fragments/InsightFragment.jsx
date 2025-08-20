@@ -11,11 +11,11 @@ function InsightFragment({ titleText, someInfo, imgUrl }) {
       </div>
 
       {/* Image Reveal Section */}
-      <div className="flex justify-center items-center overflow-hidden w-0 group-hover:w-24 transition-all duration-300 ease-in-out">
+      <div className="flex justify-center items-center overflow-hidden w-0 group-hover:w-24 group-active:w-24 transition-all duration-300 ease-in-out">
         <img
           src={imgUrl}
           alt="Insight visual"
-          className="object-contain w-full h-auto scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out"
+          className="object-contain w-full h-auto scale-0 group-hover:scale-100 group-active:scale-100 transition-transform duration-300 ease-in-out"
         />
       </div>
     </div>
@@ -26,6 +26,6 @@ export default InsightFragment;
 
 
 
-// {/* Image Reveal Section ~ other possible method, but image not rising*/}
+// {/* Image Reveal Section ~ other possible method, but image not rising */}
 // <div className="overflow-hidden w-0 group-hover:w-24 transition-all duration-300 ease-in-out">
 

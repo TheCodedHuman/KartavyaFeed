@@ -1,5 +1,5 @@
 <p align='center'>
-   <img src='frontend\src\assets\KartavyaFEED_README_Banner.jpg' alt='Project Banner' width='100%'> 
+   <img src='frontend\src\assets\media\KartavyaFEED_README_Banner.jpg' alt='Project Banner' width='100%'> 
 <p>
 
 <p align="center">
@@ -98,5 +98,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 <br />
 
-> Made in <img src='frontend\src\assets\TheEternallyDivineIndia.jpg' height='11'> with ❤️ by [TheCodedHuman](https://github.com/TheCodedHuman) | v0.0.0
+> Made in <img src='frontend\src\assets\media\TheEternallyDivineIndia.jpg' height='11'> with ❤️ by [TheCodedHuman](https://github.com/TheCodedHuman) | v0.0.0
 

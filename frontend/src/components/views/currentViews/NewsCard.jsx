@@ -1,6 +1,6 @@
 import Flag from 'react-world-flags'
-import countryCodes from '../../../assets/countryCodes.js';
-import { toCapitalized } from "../../../assets/Utils/stringUtils.js";
+import countryCodes from '../../../assets/scripts/countryCodes.js';
+import { toCapitalized } from "../../../assets/utils/stringUtils.js";
 
 
 function NewsCard({ data }) {

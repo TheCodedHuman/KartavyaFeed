@@ -8,7 +8,7 @@ function PromoBanner() {
             
             {/* Text Section */}
             <div className='flex flex-col gap-y-6 items-center px-10 text-center lg:text-left'>
-                <h1 className='text-3xl md:text-6xl capitalize font-outfit font-extrabold'>Bharat's <span>Perspective Playground</span><br />for <span className='font-gummy text-white hover:text-5xl md:hover:text-8xl  duration-500' style={{ textShadow: '-6px 4px 1px #111' }}>Curious</span> Minds</h1>
+                <h1 className='text-3xl md:text-6xl capitalize font-outfit font-extrabold'>Bharat's <span>Perspective Playground</span><br />for <span className='font-gummy text-white hover:text-5xl active:text-5xl md:hover:text-8xl  duration-500' style={{ textShadow: '-6px 4px 1px #111' }}>Curious</span> Minds</h1>
                 <p className='mb-4 text-2xl font-outfit'>Explore ideas, challenge narratives, and grow with KartavyaFeed</p>
 
                 <Link to='/latest' className='py-4 px-10 text-3xl bg-[#ff4f09] text-white hover:bg-[#FF1109] rounded-lg font-gummy duration-350 ease-outdrop-shadow-5xl text-center hover:scale-105 hover:drop-shadow-2xl'>

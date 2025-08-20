@@ -1,9 +1,9 @@
 import { use, useState } from 'react'
 import { Search, RefreshCcw } from 'lucide-react'
-import { toCapitalized } from "../../../assets/Utils/stringUtils.js";
+import { toCapitalized } from "../../../assets/utils/stringUtils.js";
 import axios from 'axios'
-import countryCodes from '../../../assets/countryCodes.js'
-import newsCategory from '../../../assets/newsCategory.js';
+import countryCodes from '../../../assets/scripts/countryCodes.js'
+import newsCategory from '../../../assets/scripts/newsCategory.js';
 
 function Categorize({ setNewsData, setLoading }) {
 

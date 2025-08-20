@@ -40,7 +40,7 @@ function AccountLoginView({ setMobileLogin, onClose }) {
                         id="account"
                         name="account"
                         type="email"
-                        // pattern="[^@\s]+@[^@\s]+\.[^@\s]+"   will uncomment soon after knowing its weight
+                        pattern="[^@\s]+@[^@\s]+\.[^@\s]+"              // regex pattern matching
                         title="Please enter a valid email address"
                         placeholder="Enter your email account" />
 
@@ -76,4 +76,20 @@ function AccountLoginView({ setMobileLogin, onClose }) {
 }
 
 export default AccountLoginView
+
+
+/*
+
+    This input uses a regex pattern to validate basic email addresses.
+
+            Pattern: [^ @\s] + @[^ @\s] +\.[^ @\s] +
+
+        Explanation:
+            - Ensures there's a username before the '@' (no spaces or extra '@' symbols)
+            - Requires a domain name after the '@'
+            - Checks for a dot '.' followed by a domain extension(like.com, .org)
+        
+            Note: This is a basic validation and may miss certain edge cases. For full accuracy, consider using a dedicated method or function.
+
+*/
 
